@@ -1,0 +1,19 @@
+{% extends 'layouts/base_question.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+{{ answer.text }}
+{% endblock %}
+
+{% block footer %}
+<div class="mt-4 text-success" style="font-size: 13pt;">
+    <div class="form-check">
+        <input class="form-check-input pb-0" value="" type="checkbox"
+               id="checkbox1">
+        <label for="checkbox1" class="form-check-label alert-top">Correct!</label>
+    </div>
+</div>
+{% endblock %}
+

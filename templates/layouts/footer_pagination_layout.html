@@ -1,0 +1,27 @@
+<footer>
+    <nav class="navbar navbar-expand navbar-da bg-dark">
+        <span>
+        <ul class="pagination ml-5 pl-3">
+            {% if visible_pages.0 != 1 %}
+            <li class="page-item">
+                <a class="page-link" href="{% url route %}?page={{ current_page|add:" -1"}}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            {% for page_number in visible_pages %}
+            <li class="page-item"><a class="page-link" {% if page_number == current_page %} style="font-weight: bold" {% endif %}
+                                     href="{% url route %}?page={{ page_number }}">{{ page_number }}</a></li>
+            {% endfor %}
+            {% if not last_page %}
+            <li class="page-item">
+                <a class="page-link" href="{% url route %}?page={{ current_page|add:" 1"}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+            </span>
+    </nav>
+
+</footer>

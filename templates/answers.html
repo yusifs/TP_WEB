@@ -1,0 +1,32 @@
+{% extends 'layouts/base_layout.html' %}
+
+{% block header %}
+{% include 'components/navbar_guest.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="m-3 mt-0">
+        {% include 'components/questionConcrete.html' %}
+    </div>
+
+<div class="card m-3">
+    <div class="card-header h2">
+        Answers
+    </div>
+    {% for answer in answers %}
+    {% include 'components/answer.html' %}
+    {% endfor %}
+</div>
+    <div class="card m-3">
+        <textarea class="m-3" placeholder="Write your answer..." rows="5"></textarea>
+        <span>
+    <button type="submit" class="btn btn-primary m-2 mr-3 float-right">Send answer</button>
+</span>
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+{% include 'components/footer_pagination.html' %}
+{% endblock %}

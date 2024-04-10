@@ -1,0 +1,51 @@
+{% extends 'layouts/base_layout.html' %}
+{% load static %}
+
+{% block header %}
+{% include 'components/navbar_logged.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-title h1 m-2">
+        New Question
+    </div>
+    <form>
+        <div class="row m-2">
+            <div class="col-2 pl-4 ">
+                <label for="inputTitle" style="font-size: 15pt; font-family: 'Nimbus Mono PS'">Title </label>
+            </div>
+            <div class="col-10 pr-5 pl-4">
+                <input id="inputTitle" class="form-control">
+            </div>
+        </div>
+
+
+        <div class="row m-2">
+            <div class="col-2 pl-4 pt-1">
+                <label for="inputQuestion" style="font-size: 15pt; font-family: 'Nimbus Mono PS'">Question</label>
+            </div>
+            <div class="col-10 pr-5 pl-4">
+                <textarea id="inputQuestion" class="form-control" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="row m-2">
+            <div class="col-2 pl-4 pt-1">
+                <label for="inputTags" style="font-size: 15pt; font-family: 'Nimbus Mono PS'"> Tags </label>
+            </div>
+            <div class="col-10 pr-5 pl-4">
+                <input id="inputTags" class="form-control">
+            </div>
+        </div>
+    </form>
+    <button type="submit" class="btn btn-success m-3">Опубликовать</button>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% include 'components/footer_without_pagination.html' %}
+
+{% endblock %}
+

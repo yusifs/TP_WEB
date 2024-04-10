@@ -1,0 +1,50 @@
+{% load static %}
+
+<div class="card">
+    {% block header %}
+    <div class="card-header font-weight-bold h4 font-fa">
+        <a href="{% url 'answers' question.id %}"> {{ question.title }} </a>
+    </div>
+    {% endblock %}
+    <div class="card-body py-2">
+        <div class="row">
+            <div class="col-3 justify-content-center">
+                <div class="justify-content-center">
+                <img src="{% static '/img/avatar.jpg' %}" class="img-fluid py-2 card-img rounded">
+                </div>
+                <div class="btn-group flex-lg-row flex-column mt-3 mb-2 ml-3 ml-xl-4 btns" role="group">
+                    <button type="button" class="btn btn-success btn-sm">↑</button>
+                    <span class="border-2 bg-white px-2 fw-bold">1</span>
+                    <button type="button" class="btn btn-danger btn-sm">↓</button>
+                </div>
+            </div>
+            <div class="col-9 pl-0">
+                <div class="card-body py-0">
+                    <div class="card-text question">
+                        {% block body %}
+                        {{ question.text }}
+                        {% endblock %}
+                    </div>
+
+                    {% block footer %}
+                    <div class="row px-3 my-3">
+                        <div class="col-6 px-0 font-italic">
+                            <a href="{% url 'answers' question.id %}" class="card-link">Answers ({{ question.answers }})</a>
+                        </div>
+                        <div class="col-6 px-0">
+                            <div class="col-4"></div>
+                            <div class="font-italic">
+                                Tags: <u>ADS</u> <u>WEB</u> <u>SD</u>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock %}
+                </div>
+                {% block additional_info %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</div>

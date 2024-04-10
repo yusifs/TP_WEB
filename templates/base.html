@@ -1,0 +1,23 @@
+{% extends 'layouts/base_layout.html' %}
+{% load static %}
+
+{% block header %}
+{% include 'components/navbar_logged.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="text-black h1 pl-3">
+        Questions list
+    </div>
+    {% for question in questions %}
+    <div class="m-3">
+        {% include 'components/question.html' %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include 'components/footer_pagination.html' %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layouts/base_layout.html' %}
+{% load static %}
+
+{% block header %}
+{% include 'components/navbar_guest.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body pt-0">
+        <div class="card-title h1">
+            Log in
+        </div>
+        <label><span class="text text-danger">
+                        Incorrect password
+                    </span>
+        </label>
+        <form>
+            <form class="my-3 mr-2">
+                <label for="loginInput" class="form-label" style="font-size: 1rem;">Login</label>
+                <input class="form-control" id="loginInput" placeholder="example@mail.com">
+            </form>
+
+            <form class="my-3 mr-2">
+                <label for="passwordInput" class="form-label" style="font-size: 1rem;">Password</label>
+                <input type="password" class="form-control" id="passwordInput">
+            </form>
+        </form>
+        <button type="submit" class="btn btn-primary m-3 float-right">Log in!</button>
+        <a href="{% url 'register' %}" class="float-right mt-4" style="text-decoration-line: underline;">
+                        <span class="text text-decoration-underline">
+                            create new account
+                        </span>
+        </a>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% include 'components/footer_without_pagination.html' %}
+
+{% endblock %}
